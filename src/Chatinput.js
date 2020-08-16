@@ -13,10 +13,10 @@ function Chatinput({channelName,channelId}) {
         e.preventDefault();
         if(channelId){
             db.collection("rooms").doc(channelId).collection("messages").add({
-                message:input,
+                message: input,
                 timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
                 user:user.displayName,
-                userimage:user.photoURL, 
+                userImage:user.photoURL, 
             }) ;  
         }      
     };
@@ -28,7 +28,9 @@ console.log(input);
         <form>
             <input value={input}
             onChange={ (e) => setInput(e.target.value)}
-            placeholder={`Message#${channelName?.toLowerCase()}`}/>
+            placeholder={`Message#${channelName?.toLowerCase()}`}
+
+            />
             <button type="submit" onClick={sendMessage}>SEND</button>
         </form>
             

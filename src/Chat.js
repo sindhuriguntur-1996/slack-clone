@@ -27,7 +27,7 @@ function Chat() {
        );
     
     }, [roomId])
-console.log(roomDetails);
+console.log("room ",roomDetails);
 console.log("messages",roomMessages);
 //console.log(db.collection('rooms').doc(roomId).collection("messages").docs);
 //console.log(db.collection('rooms').doc(roomId).collection("messages").doc)
@@ -57,7 +57,7 @@ console.log("messages",roomMessages);
                         userImage={userImage}/>
              ))}
           </div>
-          <Chatinput channelName={roomDetails?.name} channelId/>
+          <Chatinput channelName={roomDetails?.name} channelId={roomId}/>
         </div>
     );
 }

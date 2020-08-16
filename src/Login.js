@@ -9,13 +9,11 @@ function Login() {
 const [state,dispatch]=useStatevalue();
     const signIn= () =>{
         auth.signInWithPopup(provider).then(result=>{
-            console.log(result);
+            console.log("result",result);
             dispatch({
                 type:actionTypes.SET_USER,
                 user:result.user,
-            }
-
-            )
+            });
         })
         .catch((error)=>{
             alert(error.message);
